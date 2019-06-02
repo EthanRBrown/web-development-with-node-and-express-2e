@@ -1,0 +1,35 @@
+<!-- see views/layouts/main.hbs for the "rest" of the HTML! -->
+<style>
+  dt {
+    font-weight: bold;
+    padding-top: 1em;
+  }
+</style>
+<h2>Greeting</h2>
+<dl>
+
+  <dt>Message:</dt>
+  <dd>
+  {{message}}
+    <br />(modify 04-views-with-content.js to change)
+  </dd>
+
+  <dt>Style:</dt>
+  <dd>
+    {{style}}
+    <br />(edit URL to change; for example, <a href="/greeting/?style=fancy">/greeting/?style=fancy</a>)
+  </dd>
+
+  <dt>User ID:</dt>
+  <dd>
+    {{userid}}
+    <br />(click <a href="/set-random-userid">here</a> to change randomly)
+  </dd>
+
+  <dt>Username:</dt>
+  <dd>
+    {{username}}
+    <br />(click <a href="/set-random-username">here</a> to change randomly)
+  </dd>
+
+</dl>

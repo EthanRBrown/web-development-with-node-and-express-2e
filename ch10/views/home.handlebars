@@ -1,0 +1,60 @@
+<h2>Your Shopping Cart</h2>
+<ul>
+  {{#each cart.errors}}
+    <div class="alert alert-dismissible alert-danger">
+      <button type="button" class="close" 
+        data-dismiss="alert" aria-hidden="true">&times;</button>
+      <strong>Error!</strong> {{.}}
+    </div>
+  {{/each}}
+  {{#each cart.warnings}}
+    <div class="alert alert-dismissible alert-warning">
+      <button type="button" class="close" 
+        data-dismiss="alert" aria-hidden="true">&times;</button>
+      <strong>Warning!</strong> {{.}}
+    </div>
+  {{/each}}
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th class="text-right">Price</th>
+        <th class="text-right">Guests</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each cart.items}}
+        <tr>
+          <td>{{product.name}}</td>
+          <td class="text-right">{{product.price}}</td>
+          <td class="text-right">{{guests}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</ul>
+
+<h2>Store</h2>
+<p><i>To remove items, use negative numbers (in real life we would never design a UI like this!)</i></p>
+<form action="/add-to-cart" method="POST">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th class="text-right">Price</th>
+        <th class="text-right">Guests</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each products}}
+        <tr>
+          <td>{{name}}</td>
+          <td class="text-right">{{price}}</td>
+          <td class="text-right"><input type="number" value="0" name="guests-{{id}}" /></td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+  <button type="submit" class="btn btn-primary">Add To Cart</button>
+</ul>

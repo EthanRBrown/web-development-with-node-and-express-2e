@@ -1,0 +1,12 @@
+{
+  "name": "wdne23-ch03",
+  "version": "1.0.0",
+  "description": "Web Development with Node and Express, 2nd Edition, Chapter 3 Examples",
+  "main": "index.js",
+  "author": "Ethan Brown <e@zepln.com>",
+  "license": "(MIT OR GPL-3.0)",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.0"
+  }
+}

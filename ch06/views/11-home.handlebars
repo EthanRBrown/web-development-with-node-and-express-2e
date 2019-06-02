@@ -1,0 +1,67 @@
+<!-- see views/layouts/main.hbs for the "rest" of the HTML! -->
+<h2>Tell Us About Yourself</h2>
+<form action="/process-contact" method="post">
+  <div>
+    <label>Your name:
+      <input name="name" />
+    </label>
+  </div>
+  <br />
+  <div>
+    <label>Your email:
+      <input name="email" type="email" />
+    </label>
+  </div>
+  <br />
+  <div>
+    <label>Simulator error:
+      <input type="checkbox" name="simulateError" />
+    </label>
+  </div>
+  <br />
+  <div>
+    <label>Use Ajax?:
+      <input type="checkbox" name="useAjax" />
+    </label>
+  </div>
+  <br />
+  <div>
+    <button type="submit">Submit</button>
+  </div>
+</form>
+<script>
+  // little utility object for calling our API
+  const api = {
+    post(path, data) {
+      const body = typeof data === 'object' ? JSON.stringify(data) : data
+      const headers = {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      }
+      return fetch(path, { method: "POST", body, headers })
+        .then(res => {
+          if(res.status < 200 || res.status >= 400)
+            return Promise.reject(new Error(`API error: ${res.status}`))
+          return res.json()
+        })
+    }
+  }
+  // intercept form submission
+  document.querySelector('form').addEventListener('submit', evt => {
+    const formdata = new FormData(evt.target)
+    if(!formdata.get('useAjax')) return   // if not using ajax, proceed with normal form submission
+    // abort normal form submission and use ajax
+    evt.preventDefault()
+    const data = {
+      name: formdata.get('name'),
+      email: formdata.get('email'),
+      simulateError: formdata.get('simulateError'),
+    }
+    // we're just redirecting to the existing "thank you" and "error" pages, but
+    // in a real application, we would probably dynamically change the DOM to
+    // iindicate success or failure
+    api.post('/process-contact', data)
+      .then(() => window.location = '/thank-you')
+      .catch(() => window.location = '/contact-error')
+  })
+</script>

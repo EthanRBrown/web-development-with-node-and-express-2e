@@ -1,0 +1,22 @@
+{
+  "name": "meadowlark",
+  "version": "1.0.0",
+  "description": "",
+  "main": "meadowlark.js",
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint meadowlark.js lib"
+  },
+  "author": "Ethan Brown <e@zepln.com>",
+  "license": "(MIT OR GPL-3.0)",
+  "dependencies": {
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^5.15.3",
+    "jest": "^24.5.0",
+    "portfinder": "^1.0.20",
+    "puppeteer": "^1.13.0"
+  }
+}
