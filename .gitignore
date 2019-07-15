@@ -89,3 +89,8 @@ typings/
 
 # MacOS file browser configuration
 .DS_Store
+
+# Credentials files
+credentials.js*
+
+.vscode

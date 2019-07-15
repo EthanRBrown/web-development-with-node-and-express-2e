@@ -1,0 +1,3 @@
+# ignoring the static direcotry for now...since it's just going to hold build output from CRA
+/public/
+

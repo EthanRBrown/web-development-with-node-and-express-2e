@@ -1,0 +1,60 @@
+<h2>Vacation Photo Contest</h2>
+
+<div id="vacationPhotoContestFormContainer">
+<form class="form-horizontal" role="form"
+    id="vacationPhotoContestForm"
+    enctype="multipart/form-data" method="POST"
+    action="/contest/vacation-photo/{{year}}/{{month}}">
+  <input type="hidden" name="_csrf" value="{{csrf}}">
+  <div class="form-group">
+    <label for="fieldName" class="col-sm-2 control-label">Name</label>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" 
+      id="fieldName" name="name">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="fieldEmail" class="col-sm-2 control-label">Email</label>
+    <div class="col-sm-4">
+      <input type="email" class="form-control" required 
+          id="fieldEmail" name="email">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="fieldPhoto" class="col-sm-2 control-label">Vacation photo</label>
+    <div class="col-sm-4">
+      <input type="file" class="form-control" required  accept="image/*"
+          id="fieldPhoto" name="photo">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-4">
+      <button type="submit" class="btn btn-primary">Register</button>
+    </div>
+  </div>
+</form>
+
+{{#section 'scripts'}}
+  <script>
+    document.getElementById('vacationPhotoContestForm')
+      .addEventListener('submit', evt => {
+        evt.preventDefault()
+        const body = new FormData(evt.target)
+        const container =
+          document.getElementById('vacationPhotoContestFormContainer')
+        fetch('/api/vacation-photo-contest/{{year}}/{{month}}', { method: 'post', body })
+          .then(resp => {
+            if(resp.status < 200 || resp.status >= 300)
+              throw new Error(`Request failed with status ${resp.status}`)
+            return resp.json()
+          })
+          .then(json => {
+            container.innerHTML = '<b>Thank you for submitting your photo!</b>'
+          })
+          .catch(err => {
+            container.innerHTML = `<b>We're sorry, we had a problem processing ` +
+              `your submission.  Please <a href="/newsletter">try again</a>`
+          })
+      })
+  </script>
+{{/section}}
