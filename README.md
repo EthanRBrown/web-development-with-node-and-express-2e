@@ -1,10 +1,15 @@
-# Web Development with Node and Express, 2nd Edition
-## Companion Repository
+# Examples - Web Development with Node and Express, 2nd Edition
 
-### WORK IN PROGRESS
+*WORK IN PROGRESS*
 
-THis companion repo is currently only...half-baked at best.  Most of the substantial copy updates 2nd edition are in first draft, and now I need to turn my attention to cleaning up and documenting this repository.
+Most of the code samples in this repo are complete, if difficult to navigate.  I am in the progress up updating the README files to make it easier to find your way around, and correct any missing documenation.  Please let me know if there's something that you feels needs additional clarification or explanation.
 
-This companion repository has a folder for every chapter.  While most chapters
-follow a familiar formulat, each one has its own README.md file to explain any
-differences.
+## Chapters
+
+### Chapter 1
+
+This is just an introductory chapter, with no example code.
+
+### Chapter 2
+
+The [Chapter 2 Examples](ch02/README.md) demonstrate a simple, minimal web server using Node only (no Express) to provide the reader a little background.

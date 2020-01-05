@@ -6,7 +6,5 @@
   "author": "Ethan Brown <e@zepln.com>",
   "license": "(MIT OR GPL-3.0)",
   "dependencies": {
-    "express": "^4.16.4",
-    "express-handlebars": "^3.0.0"
   }
 }
