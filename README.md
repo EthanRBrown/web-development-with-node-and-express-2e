@@ -13,3 +13,7 @@ This is just an introductory chapter, with no example code.
 ### Chapter 2
 
 The [Chapter 2 Examples](ch02/README.md) demonstrate a simple, minimal web server using Node only (no Express) to provide the reader a little background.
+
+### Chapter 3
+
+The [Chapter 3 Examples](ch03/README.md) demonstrate a simple, minimal web server using Express.
