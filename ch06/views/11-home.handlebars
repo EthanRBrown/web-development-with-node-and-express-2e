@@ -59,7 +59,7 @@
     }
     // we're just redirecting to the existing "thank you" and "error" pages, but
     // in a real application, we would probably dynamically change the DOM to
-    // iindicate success or failure
+    // indicate success or failure
     api.post('/process-contact', data)
       .then(() => window.location = '/thank-you')
       .catch(() => window.location = '/contact-error')

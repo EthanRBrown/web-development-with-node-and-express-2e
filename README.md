@@ -20,8 +20,12 @@ The [Chapter 3 Examples](ch03/README.md) demonstrate a simple, minimal web serve
 
 ### Chapter 4
 
-The [Chapter 4 Example](ch03/README.md) take the "fortune cookie" functionality deveoped in Chapter 3, and implement it as a Node module.
+The [Chapter 4 Example](ch04/README.md) take the "fortune cookie" functionality deveoped in Chapter 3, and implement it as a Node module.
 
 ### Chapter 5
 
-The [Chapter 5 Example](ch03/README.md) demonstrates unit testing with Jest, integration testing with Jest and Puppeteer, and linting with ESLint.
+The [Chapter 5 Example](ch05/README.md) demonstrates unit testing with Jest, integration testing with Jest and Puppeteer, and linting with ESLint.
+
+### Chapter 6
+
+The [Chapter 6 Example](ch06/README.md) uses small examples to demonstrate various useful features of Express, such as rendering views, using cookies and sessions, processing forms, and providing an API.

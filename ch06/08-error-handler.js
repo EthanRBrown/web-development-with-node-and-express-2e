@@ -9,7 +9,7 @@ app.set('view engine', 'handlebars')
 // see the views/error.hbs file for the contents of this view
 app.get('/bad-bad-not-good', (req, res) => {
   // we're going to simulate something bad happening in your code....
-  throw new Error("well that didn't go well!")
+  throw new Error("that didn't go well!")
 })
 
 app.get('*', (req, res) => res.render('08-click-here'))

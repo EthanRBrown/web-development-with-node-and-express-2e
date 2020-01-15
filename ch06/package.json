@@ -1,7 +1,7 @@
 {
-  "name": "wdne2e-ch05-examples",
+  "name": "wdne2e-ch06-examples",
   "version": "1.0.0",
-  "description": "Web Development WIth Node And Express, 2nd Ed. - Chapter 5 Examples",
+  "description": "Web Development WIth Node And Express, 2nd Ed. - Chapter 6 Examples",
   "author": "Ethan Brown <e@zepln.com>",
   "license": "(MIT OR GPL-3.0)",
   "dependencies": {

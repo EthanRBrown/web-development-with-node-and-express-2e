@@ -20,10 +20,11 @@ app.delete('/api/tour/:id', (req, res) => {
 })
 
 app.use('*', (req, res) => res.send(
-  `<p>Use a tool like <a href="https://www.getpostman.com">Postman</a> to try the following:</p>` +
+  `<p>Use a tool like <a href="https://www.getpostman.com">Postman</a> ` +
+  `or <a href="https://curl.haxx.se/">curl</a> to try the following:</p>` +
   `<pre>` +
   `GET /api/tours\n` +
-  `DELETE /api/tours/0\n` +
+  `DELETE /api/tour/0\n` +
   `GET /api/tours`))
 
 const port = process.env.PORT || 3000
