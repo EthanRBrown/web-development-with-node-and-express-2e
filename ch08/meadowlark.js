@@ -53,6 +53,7 @@ app.post('/contest/vacation-photo/:year/:month', (req, res) => {
     handlers.vacationPhotoContestProcess(req, res, fields, files)
   })
 })
+app.get('/contest/vacation-photo-thank-you', handlers.vacationPhotoContestProcessThankYou)
 app.post('/api/vacation-photo-contest/:year/:month', (req, res) => {
   const form = new multiparty.Form()
   form.parse(req, (err, fields, files) => {
