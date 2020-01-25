@@ -31,8 +31,11 @@ exports.vacationPhotoContestProcess = (req, res, fields, files) => {
   console.log('files: ', files)
   res.redirect(303, '/contest/vacation-photo-thank-you')
 }
-exports.vacationPhotoContestProcess = (req, res, fields, files) => {
+exports.vacationPhotoContestProcessError = (req, res, fields, files) => {
   res.redirect(303, '/contest/vacation-photo-error')
+}
+exports.vacationPhotoContestProcessThankYou = (req, res) => {
+  res.render('contest/vacation-photo-thank-you')
 }
 exports.api.vacationPhotoContest = (req, res, fields, files) => {
   console.log('field data: ', fields)
