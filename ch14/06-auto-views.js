@@ -7,9 +7,10 @@ const app = express()
 app.engine('handlebars', expressHandlebars({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
 
-const port = process.env.PORT || 3000
-
 app.use(express.static(__dirname + '/public'))
+
+// provide a home page
+app.get('/', (req, res) => res.render('06-home.handlebars'))
 
 const autoViews = {}
 const fs = require('fs')
@@ -30,7 +31,5 @@ app.use(async (req, res, next) => {
   next()
 })
 
-app.listen(port, () => {
-  console.log( `Express started on http://localhost:${port}` +
-    '; press Ctrl-C to terminate.' )
-})
+const port = process.env.PORT || 3000
+app.listen(port, () => console.log( `\nnavigate to http://localhost:${port}/staff`))

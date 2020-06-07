@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Meadowlark Travel</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    {{{_sections.head}}}
+    <style>
+      a.currency {
+        text-decoration: none;
+      }
+      .currency.selected {
+        font-weight: bold;
+        font-size: 150%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Meadowlark Travel</h1>
+        <img src="/img/logo.png" alt="Meadowlark Travel Logo">
+        {{#if user}}
+          <p>Welcome, {{user.email}}!  <a href="/logout">Logout</a></p>
+        {{else}}
+          <p>If you want to log in, enter any email and password here (this is just a demo of an authorization mechanism, so we don't actually do any checking):</p>
+
+          <form method="post" action="/login">
+            <div><input type="email" name="email" value="anyemail@willdo.com" /></div>
+            <div><input type="password" name="password" placeholder="any password works" /></div>
+            <div><input type="submit" value="Login" /></div>
+          </form>
+        {{/if}}
+      </header>
+      {{{body}}}
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    {{{_sections.scripts}}}
+  </body>
+</html>
