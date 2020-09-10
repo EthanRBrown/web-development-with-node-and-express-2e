@@ -14,7 +14,7 @@ const createAuth = require('./lib/auth')
 const createTwitterClient = require('./lib/twitter')
 const geocode = require('./lib/geocode')
 
-const credentials = require('./credentials')
+const { credentials } = require('./config')
 
 require('./db')
 
@@ -44,7 +44,7 @@ app.use(expressSession({
   saveUninitialized: false,
   secret: credentials.cookieSecret,
   store: new RedisStore({
-    url: credentials.redis[app.get('env')].url,
+    url: credentials.redis.url,
     logErrors: true,
   }),
 }))

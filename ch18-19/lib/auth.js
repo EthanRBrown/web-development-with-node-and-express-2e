@@ -22,13 +22,12 @@ module.exports = (app, options) => {
 
 	return {
     init: function() {
-      const env = app.get('env')
-      var config = options.providers
+      const config = options.providers
 
       // configure Facebook strategy
       passport.use(new FacebookStrategy({
-        clientID: config.facebook[env].appId,
-        clientSecret: config.facebook[env].appSecret,
+        clientID: config.facebook.appId,
+        clientSecret: config.facebook.appSecret,
         callbackURL: (options.baseUrl || '') + '/auth/facebook/callback',
       }, (accessToken, refreshToken, profile, done) => {
         const authId = 'facebook:' + profile.id
@@ -52,8 +51,8 @@ module.exports = (app, options) => {
 
       // configure Google strategy
       passport.use(new GoogleStrategy({
-        clientID: config.google[env].clientID,
-        clientSecret: config.google[env].clientSecret,
+        clientID: config.google.clientID,
+        clientSecret: config.google.clientSecret,
         callbackURL: (options.baseUrl || '') + '/auth/google/callback',
       }, (token, tokenSecret, profile, done) => {
         const authId = 'google:' + profile.id

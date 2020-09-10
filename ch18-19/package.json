@@ -1,13 +1,13 @@
 {
   "name": "ch15",
   "version": "1.0.0",
-  "description": "",
+  "description": "Web Development with Node and Express, 2nd Edition, Chapter 18 and 19 Examples",
+  "license": "ISC",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC",
   "dependencies": {
     "chai": "^4.2.0",
     "connect-redis": "^3.4.1",

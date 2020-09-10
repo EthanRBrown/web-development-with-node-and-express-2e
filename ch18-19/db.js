@@ -1,9 +1,8 @@
-const credentials = require('./credentials')
+const { credentials } = require('./config')
 
 // initialize database connection
 const mongoose = require('mongoose')
-const env = process.env.NODE_ENV || "development"
-const { connectionString } = credentials.mongo[env]
+const { connectionString } = credentials.mongo
 if(!connectionString) {
   console.error('MongoDB connection string missing!')
   process.exit(1)

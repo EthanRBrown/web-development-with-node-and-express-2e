@@ -1,0 +1,14 @@
+version: '3'
+services:
+  redis:
+    image: "redis:6"
+    ports:
+      - 6379:6379
+  mongo:
+    image: mongo:4-bionic
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: ooKAl7mx0lhv
+      MONGO_INITDB_DATABASE: meadowlark

@@ -1,5 +1,5 @@
 const https = require('https')
-const credentials = require('../credentials')
+const { credentials } = require('../config')
 
 module.exports = async query => {
 

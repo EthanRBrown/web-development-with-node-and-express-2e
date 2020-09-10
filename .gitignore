@@ -94,6 +94,7 @@ typings/
 .DS_Store
 
 # Credentials files
-credentials.js*
+credentials.*
+!credentials.*.EXAMPLE
 
 .vscode
