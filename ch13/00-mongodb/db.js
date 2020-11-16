@@ -19,7 +19,7 @@ db.once('open', () => console.log('MongoDB connection established'))
 // seed vacation data (if necessary)
 const Vacation = require('./models/vacation.js')
 Vacation.find((err, vacations) => {
-  if(err) return cosole.error(err)
+  if(err) return console.error(err)
   if(vacations.length) return
 
   new Vacation({
