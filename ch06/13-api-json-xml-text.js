@@ -18,7 +18,7 @@ app.get('/api/tours', (req, res) => {
     'application/json': () => res.json(tours),
     'application/xml': () => res.type('application/xml').send(toursXml),
     'text/xml': () => res.type('text/xml').send(toursXml),
-    'text/plain': () => res.type('text/plain').send(toursXml),
+    'text/plain': () => res.type('text/plain').send(toursText),
   })
 })
 
