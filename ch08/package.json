@@ -12,6 +12,6 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "express-handlebars": "^3.0.2",
-    "multiparty": "^4.2.1"
+    "multiparty": "^4.2.2"
   }
 }
