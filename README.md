@@ -2,7 +2,7 @@
 
 *WORK IN PROGRESS*
 
-Most of the code samples in this repo are complete, if difficult to navigate.  I am in the progress up updating the README files to make it easier to find your way around, and correct any missing documenation.  Please let me know if there's something that you feels needs additional clarification or explanation.
+Most of the code samples in this repo are complete, if difficult to navigate.  I am in the progress up updating the README files to make it easier to find your way around, and correct any missing documentation.  Please let me know if there's something that you feels needs additional clarification or explanation.
 
 ## Chapters
 
@@ -20,7 +20,7 @@ The [Chapter 3 Examples](ch03/README.md) demonstrate a simple, minimal web serve
 
 ### Chapter 4
 
-The [Chapter 4 Example](ch04/README.md) take the "fortune cookie" functionality deveoped in Chapter 3, and implement it as a Node module.
+The [Chapter 4 Example](ch04/README.md) take the "fortune cookie" functionality developed in Chapter 3, and implement it as a Node module.
 
 ### Chapter 5
 
