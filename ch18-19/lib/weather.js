@@ -48,6 +48,7 @@ module.exports = locations => {
       cache.refreshing = true
       cache.forecasts = await Promise.all(cache.forecasts.map(updateForecast))
       cache.refreshing = false
+      cache.lastRefreshed = Date.now()
     }
     return cache.forecasts
   }
