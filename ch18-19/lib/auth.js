@@ -11,6 +11,15 @@ passport.deserializeUser((id, done) => {
     .catch(err => done(err, null))
 })
 
+function handleRedirect(req, res, options, code = 303) {
+  // the default way to specify where to rediretc to after successful redirect is
+  // req.session.authRedirect; see "customerOnly" and "employeeOnly" middlware for
+  // an example.  req.query.redirect is also provided for testing & future expansion.
+  const redirectUrl = req.session.authRedirect || req.query.redirect || options.successRedirect
+  delete req.session.authRedirect // harmless if it doesn't exist
+  res.redirect(code, redirectUrl)
+}
+
 module.exports = (app, options) => {
 
 	// if success and failure redirects aren't specified,
@@ -88,10 +97,7 @@ module.exports = (app, options) => {
         (req, res) => {
           console.log('successful /auth/facebook/callback')
           // we only get here on successful authentication
-          const redirect = req.session.authRedirect
-          if(redirect) delete req.session.authRedirect
-          console.log(`redirecting to ${redirect || options.successRedirect}${redirect ? '' : ' (fallback)'}`)
-          res.redirect(303, redirect || options.successRedirect)
+          handleRedirect(req, res, options)
         }
       )
       // register Google routes
@@ -102,10 +108,9 @@ module.exports = (app, options) => {
       app.get('/auth/google/callback', passport.authenticate('google',
         { failureRedirect: options.failureRedirect }),
         (req, res) => {
+          console.log('successful /auth/google/callback')
           // we only get here on successful authentication
-          const redirect = req.session.authRedirect
-          if(redirect) delete req.session.authRedirect
-          res.redirect(303, req.query.redirect || options.successRedirect)
+          handleRedirect(req, res, options)
         }
       )
     },
