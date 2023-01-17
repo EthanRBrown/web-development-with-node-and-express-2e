@@ -2,7 +2,7 @@ const db = require('../db')
 
 exports.api = {}
 
-exports.home = (req, res) => res.render('home')
+exports.home = (req, res) => res.render('home', { username: req.user && req.user.name })
 
 // **** these handlers are for browser-submitted forms
 exports.newsletterSignup = (req, res) => {

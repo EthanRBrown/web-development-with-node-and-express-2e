@@ -131,6 +131,7 @@ const customerOnly = (req, res, next) => {
   console.log('user: ', req.user)
   if(req.user && req.user.role === 'customer') return next()
   // we want customer-only pages to know they need to logon
+  req.session.authRedirect = req.originalUrl
   res.redirect(303, '/unauthorized')
 }
 const employeeOnly = (req, res, next) => {
@@ -138,6 +139,7 @@ const employeeOnly = (req, res, next) => {
   if(req.user && req.user.role === 'employee') return next()
   // we want employee-only authorization failures to be "hidden", to
   // prevent potential hackers from even knowing that such a page exists
+  req.session.authRedirect = req.originalUrl
   next('route')
 }
 
