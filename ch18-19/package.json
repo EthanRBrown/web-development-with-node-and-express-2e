@@ -18,7 +18,7 @@
     "express-handlebars": "^3.1.0",
     "express-session": "^1.16.2",
     "jest": "^24.8.0",
-    "mongoose": "^5.6.3",
+    "mongoose": "^5.7.5",
     "multiparty": "^4.2.1",
     "passport": "^0.4.0",
     "passport-facebook": "^3.0.0",
