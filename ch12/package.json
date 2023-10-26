@@ -5,7 +5,7 @@
   "main": "00-logging.js",
   "dependencies": {
     "artillery": "^1.6.0-27",
-    "express": "^4.16.4",
+    "express": "^4.18.2",
     "jest": "^24.7.1",
     "loadtest": "^3.0.7",
     "morgan": "^1.9.1"
